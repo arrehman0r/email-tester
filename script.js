@@ -11,7 +11,7 @@ function submitForm() {
   }
 
   // Log the form data for debugging
-  console.log("Form Data:", { name, email, message });
+  console.log("Form Data: from js", { name, email, message });
 
   // Make the fetch request
   fetch("/send-email", {

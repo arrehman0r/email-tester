@@ -32,7 +32,6 @@ app.post("/send-email", (req, res) => {
       user: "info@trekhills.com.kaamkahani.com",
       pass: "CiuxQiQ8gwPr78B",
     },
-    timeout: 30000,
   });
 
   // Check if email is provided
@@ -52,8 +51,8 @@ app.post("/send-email", (req, res) => {
   // Send email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ message: "Error sending email" });
+      console.error("Error sending email yessss:", error);
+      res.status(500).json({ message: "Error sending email yess" });
     } else {
       console.log("Email sent:", info.response);
       res.json({ message: "Form submitted successfully" });
