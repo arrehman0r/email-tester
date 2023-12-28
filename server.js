@@ -21,7 +21,7 @@ app.post("/send-email", (req, res) => {
   const { name, email, message } = req.body;
 
   // Log form data for debugging
-  console.log("Form Data:", { name, email, message });
+  console.log("Form Data from server:", { name, email, message });
 
   // Create a Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -32,6 +32,7 @@ app.post("/send-email", (req, res) => {
       user: "info@trekhills.com.kaamkahani.com",
       pass: "CiuxQiQ8gwPr78B",
     },
+    timeout: 30000,
   });
 
   // Check if email is provided
