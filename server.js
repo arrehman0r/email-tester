@@ -25,12 +25,10 @@ app.post("/send-email", (req, res) => {
 
   // Create a Nodemailer transporter
   const transporter = nodemailer.createTransport({
-    host: "trekhills.com.kaamkahani.com",
-    port: 465,
-    secure: false, // Use SSL/TLS
+    service: "gmail",
     auth: {
-      user: "info@trekhills.com.kaamkahani.com",
-      pass: "CiuxQiQ8gwPr78B",
+      user: "arrehman1g@gmail.com", // Your Gmail email address
+      pass: "afsd1423", // Your Gmail password or an app-specific password
     },
   });
 
@@ -42,7 +40,7 @@ app.post("/send-email", (req, res) => {
 
   // Email content
   let mailOptions = {
-    from: "info@trekhills.com.kaamkahani.com",
+    from: "arrehman1g@gmail.com",
     to: email,
     subject: "Confirmation Email",
     text: `Hello ${name},\n\nThank you for your message. We have received your inquiry and will get back to you soon.\n\nBest regards,\nThe Team`,
