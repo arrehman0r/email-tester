@@ -25,24 +25,15 @@ app.post("/send-email", async (req, res) => {
       throw new Error("Invalid form data");
     }
 
-    // Create a Nodemailer transporter for Gmail
+    // Create a Nodemailer transporter for Trekhills mail server
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "trekhills.com.kaamkahani.com",
+      port: 465,
+      secure: true, // Use SSL/TLS
       auth: {
-        user: "enter your emial", // Your Gmail email address
-        pass: "enter your password here", // Your Gmail password or an app-specific password
+        user: "info@trekhills.com.kaamkahani.com",
+        pass: "CiuxQiQ8gwPr78B", // Replace with the actual password
       },
-    });
-
-    // Add event listener for 'login' event
-    transporter.on("login", (auth) => {
-      console.log("Login successful:", auth);
-    });
-
-    // Add event listener for 'error' event
-    transporter.on("error", (error) => {
-      console.error("Error during login:", error);
-      res.status(500).json({ message: "Error during login" });
     });
 
     // Check if email is provided
@@ -53,10 +44,10 @@ app.post("/send-email", async (req, res) => {
 
     // Email content
     let mailOptions = {
-      from: "emial here", //enter emial here too
+      from: "info@trekhills.com.kaamkahani.com",
       to: email,
-      subject: "Confirmation Email",
-      text: `Hello ${name},\n\nThank you for your message. We have received your inquiry and will get back to you soon.\n\nBest regards,\nThe Team`,
+      subject: "Test Email",
+      text: `Hello ${name},\n\nThis is a test email from your local server.\n\nBest regards,\nThe Team`,
     };
 
     // Send email
